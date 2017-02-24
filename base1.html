@@ -12,7 +12,7 @@
 <!-- les titres : h1->h6-->
 <h1>titre principale  de la page</h1>
 
-<h2>sous titres</h2>
+<h2 align="center">sous titres</h2>
 
 <!-- les balises textes p, -->
 <p><blockquote>Lorem ipsum dolor sit amet, <strong>gras</strong> adipisicing elit</blockquote> , sed do <a name="ita"></a><em>italique</em>
@@ -95,5 +95,27 @@ table>tr*4>(th{je suis dans th $}+td{je suis dans td $})
 
 <a name="bas"></a>
 <a href="#ita">italique</a>
+table>tr>td*2>img
+<!-- les formulaires-->
+<hr>
+form>table>tr*3>(td+(td>input))
+<form action="">
+	<table border="1">
+		<tr>
+			<td>Libellé</td>
+			<td><input type="text"></td>
+		</tr>
+		<tr>
+			<td>Prix : </td>
+			<td><input type="text"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><input type="submit"></td>
+		</tr>
+	</table>
+</form>
+
 </body>
 </html>
+
