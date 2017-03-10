@@ -1,0 +1,17 @@
+*{
+	margin:0;
+	padding: 0;
+}
+body{
+background: #F6BA25;
+
+}
+
+table{
+background: #DEF124 !important;
+color: #F00;
+	/* margin-right: auto;
+	margin-left: auto; */
+	margin: 0 auto;
+	/* margin:10px 9px 5px 0; */
+}
