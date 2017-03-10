@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>form + rappel CSS</title>
+</head>
+<body>
+
+<!-- form>table>tr*8>((td>label)+(td>input)) -->
+	<form action="" method="post">
+		<table border="0" align="center">
+			<tr>
+				<td><label for="p">Email : </label></td>
+				<td><input type="text" name="m" id="p"></td>
+			</tr>
+			<tr>
+				<td><label for="passe">Mot de passe : </label></td>
+				<td><input type="password" name="passe" id="passe"></td>
+			</tr>
+			<tr>
+				<td><label for="h">Homme</label></td>
+				<td><input type="radio" name="hf" id="h" value="homme"></td>
+			</tr>
+				<tr>
+				<td><label for="f">Femme</label></td>
+				<td><input type="radio" name="hf" id="f" value="femme"></td>
+			</tr>
+			<tr>
+				<td><label for="dip">Diplomé : </label></td>
+				<td><input type="checkbox" name="dip" id="dip" value="diplomé"></td>
+			</tr>
+			<tr>
+				<td><label for="choma">Chomeur : </label></td>
+				<td><input type="checkbox" name="chomi" id="choma" value="Chomeur"></td>
+			</tr>
+			<tr>
+				<td><label for="cv">Cv</label></td>
+				<td><input type="file" name="cv" id="cv"></td>
+			</tr>
+			<tr>
+				<td><label for="adresse">Adresse</label></td>
+				<td><textarea name="adresse" id="adresse" cols="40" rows="10"></textarea></td>
+			</tr>
+			<tr>
+				<td><label for="ville">Ville : </label></td>
+				<td><select name="ville" id="ville">
+					<option value="casa">casablanca</option>
+					<option value="rabat">rabat</option>
+					<option value="fès">fès</option>
+					<option value="marackesh">marackech</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><input type="reset" name="raz" id="raz" value="Annuler"></td>
+				<td><input type="submit" name="ok" id="ok" value="S'inscrire"></td>
+			</tr>
+		</table>
+	</form>
+
+
+</body>
+</html>
