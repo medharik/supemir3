@@ -2,10 +2,19 @@
 margin: 0;
 padding: 0;/* remise à 0 des marges */
 }
+body{
+	background: url('images/arena.jpg') no-repeat  fixed center;
+	background-size: 100% ;
+}
 /* les éléments de styles répétitifs : classe (commence par .)*/
 .b {
-border: 1px solid black;
+border: 1px solid white;
 box-sizing: border-box;
+
+}
+.trans{
+	background:black;
+	opacity: 0.7;
 }
 .l{
 width: 960px;
