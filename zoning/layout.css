@@ -1,0 +1,27 @@
+*{
+margin: 0;
+padding: 0;/* remise à 0 des marges */
+}
+/* les éléments de styles répétitifs : classe (commence par .)*/
+.b {
+border: 1px solid black;
+box-sizing: border-box;
+}
+.l{
+width: 960px;
+}
+.centrer-zone{
+	margin: auto;
+}
+.hautmil{
+	min-height: 600px;
+}
+
+#header{height: 100px;}
+#menu{	height: 45px;}
+#contenu{}
+#g{width: 160px;float: left;}
+#m{width: 600px; float: left;}
+#d{width: 200px;float: left;}
+
+#footer{height: 100px;}
