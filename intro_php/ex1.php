@@ -13,7 +13,7 @@ color: rouge;
 <?php
 
 $nom="ali";
-$sexe="femme"; 
+$sexe="homme"; 
 $poli=($sexe=="homme")? "Mr":"Mme" 
 ;
 if ($sexe=="homme") {
@@ -21,6 +21,7 @@ if ($sexe=="homme") {
 } else {
 $poli="Mme";
 }
+$couleur="kiki";
 switch ($couleur) {
 	case 'white':
 echo "blanc";
