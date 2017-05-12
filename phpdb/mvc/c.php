@@ -13,10 +13,17 @@ switch ($a) {
 		$m="suppression effectée avec succès";
 		break;
 		case 'show':
-		header("location:v.php?id=$id");
+		header("location:v.php?id=$id&a=show");
 die();
 		break;
 	case 'edit': 
+header("location:v.php?id=$id&a=showforedit");
+die();
+	break;
+	case 'update': 
+modifier_produit($id,$libelle,$prix);
+$m="modification du $libelle effectée avec succès";
+
 
 	break;
 	default:
