@@ -5,7 +5,13 @@ extract($_POST);//$libelle,$prix
 $m="";
 switch ($a) {
 	case 'add':
-		ajouter_produit($libelle,$prix);
+$chemin=uploader($_FILES['photo']);
+
+if($chemin){
+		ajouter_produit($libelle,$prix,$chemin);
+}else{
+	die("Erreur d'upload de la photo");
+}
 	$m="ajout effecté avec succès";
 		break;
 		case 'delete':
@@ -14,6 +20,7 @@ switch ($a) {
 		break;
 		case 'show':
 		header("location:v.php?id=$id&a=show");
+
 die();
 		break;
 	case 'edit': 

@@ -31,7 +31,7 @@ if(!empty($id)){
 
 
 
-	<form action="c.php?a=<?php  echo $action; ?>" method="post">
+	<form action="c.php?a=<?php  echo $action; ?>" method="post" enctype="multipart/form-data">
 		<table align="center">
 			<tr>
 				<td>libelle : </td>
@@ -44,6 +44,10 @@ if(!empty($id)){
 				<td> <input type="text" name="prix" value="<?php if(isset($produit) && $a=='showforedit') echo $produit['prix']; ?>"></td>
 			</tr>
 			<tr>
+				<td>Photo  : </td>
+				<td><input type="file" name="photo"></td>
+			</tr>
+			<tr>
 				<td colspan="2" align="center"> <input type="submit" value="<?php  echo $btn; ?>"></td>
 							</tr>
 		</table>
@@ -51,14 +55,14 @@ if(!empty($id)){
 	<br> 
 	<table align="center" border="1" width="90%">
 		<tr>
-			<th>id</th>
+			<th>Photo</th>
 			<th>libelle</th>
 			<th>prix</th>
 			<th>action</th>
 		</tr>
 <?php while($ligne=mysqli_fetch_assoc($resultat)){ ?>
 		<tr>
-			<td><?=$ligne['id']; ?></td>
+			<td><img src="<?=$ligne['chemin']; ?>" width="100"></td>
 			<td><?=$ligne['libelle']; ?></td>
 			<td><?=$ligne['prix']; ?></td>
 			<td><a href="c.php?a=show&id=<?=$ligne['id']; ?>">consulter</a>

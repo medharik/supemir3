@@ -39,20 +39,54 @@ $ligne=mysqli_fetch_assoc($resultat);
 return  $ligne;
 }//get_by($table,"prix > 3000");
 //ajouter
-function ajouter_produit($libelle,$prix)
+function ajouter_produit($libelle,$prix,
+	$chemin="images/icon.png")
 {
 	global $lien;
-$sql=sprintf("insert into produit(libelle,prix) values ('%s',%f)", $libelle,$prix);
-mysqli_query($lien, $sql) or die("erreur d'ajout  du produit");}
+$sql=sprintf("insert into produit(libelle,prix,chemin) values ('%s',%f,'%s')", $libelle,$prix,$chemin);
+mysqli_query($lien, $sql) or die("erreur d'ajout  du produit".mysqli_error($lien));}
 
 
 
 //modifier
-function modifier_produit($id,$libelle,$prix)
+function modifier_produit($id,$libelle,$prix,$chemin)
 {global  $lien;
-$sql=sprintf("update produit set libelle='%s' , prix =%f where id=%d", $libelle,$prix,$id);
+$sql=sprintf("update produit set libelle='%s' , prix =%f, chemin='%s' where id=%d", $libelle,$prix,$chemin,$id);
 $resultat=mysqli_query($lien, $sql) or die("erreur de modification  du produit");}
 
 
+//upload
+function uploader($infos, $dossier="images/")
+{
+$nom=$infos['name'];
+$tmp=$infos['tmp_name'];
+
+$i=pathinfo($nom);
+$extension=$i['extension'];
+$autorise=array('png','jpg','gif','jpeg');
+$new_name=md5(date('Ymdhis').$nom);
+$new_chemin=$dossier.$new_name.".".$extension;
+
+if(!in_array($extension,$autorise)){
+die("ce n'est pas une image");
+
+}
+$taille=filesize($tmp);
+if ($taille>2*1024*1024) {
+	die("ce fichier est volumineux , taille max est 8Mo");
+}
+if (move_uploaded_file($tmp, $new_chemin)) {
+
+
+	return $new_chemin;
+
+}else{
+
+	return false;
+
+}
+}
+
+//fin upload  
  ?>
 
