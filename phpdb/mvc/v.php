@@ -1,5 +1,9 @@
 <?php 
 include_once 'm.php';
+demarrer_session();
+//echo session_id();
+// verifier si l'user est connecté(cad la variable $_session contient les infos correcte )
+check($_SESSION['login'],$_SESSION['passe']);
 extract($_GET);//$id, $a , $m
 $table="produit";
 $resultat=get_all($table);
@@ -20,8 +24,10 @@ if(!empty($id)){
 <head>
 	<meta charset="UTF-8">
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
-<body  oncontextmenu="return false">
+<body >
+<div class="alert alert-success">Bienvenue : <?php echo $_SESSION['nomprenom'] ?></div>
 <?php if (isset($m)): ?>
 	<div class="alert">
 	<?php echo $m; ?>
@@ -29,10 +35,13 @@ if(!empty($id)){
 </div>
 <?php endif ?>
 
+<a href="deconnexion.php" class="btn btn-danger">
+	déconnexion
 
+</a>
 
 	<form action="c.php?a=<?php  echo $action; ?>" method="post" enctype="multipart/form-data">
-		<table align="center">
+		<table align="center" class="table table-striped">
 			<tr>
 				<td>libelle : </td>
 				<td> <input type="text" name="libelle" value="<?php if(isset($produit) && $a=="showforedit") echo $produit['libelle']; ?>">

@@ -4,6 +4,10 @@ extract($_GET);//$a
 extract($_POST);//$libelle,$prix
 $m="";
 switch ($a) {
+	case 'cnx':
+		check($login,$motdepasse);
+
+		break;
 	case 'add':
 $chemin=uploader($_FILES['photo']);
 
@@ -38,4 +42,5 @@ $m="modification du $libelle effectée avec succès";
 		break;
 }
 header("location:v.php?m=$m");
+
  ?>

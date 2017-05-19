@@ -87,6 +87,39 @@ if (move_uploaded_file($tmp, $new_chemin)) {
 }
 }
 
-//fin upload  
+//fin upload 
+function demarrer_session()
+ {
+ 	if(!isset($_SESSION)){
+ 	session_start();
+ 	session_regenerate_id();
+ }
+
+ } 
+function  detruire_session(){
+	demarrer_session();
+ 	unset($_SESSION);
+ 	session_destroy();
+ }
+ function check($login,$passe)
+ {global $lien;
+ 	$sql=sprintf("select * from utilisateur where login='%s' and motdepasse='%s'" ,$login,sha1($passe));
+$resultat=mysqli_query($lien, $sql) or die("erreur de selection de $table"); 
+if(mysqli_num_rows($resultat)==0){
+header("location:login.php?cnx=no");
+}	else{
+
+demarrer_session();
+$ligne=mysqli_fetch_assoc($resultat);
+$_SESSION['login']=$login;
+$_SESSION['passe']=$passe;
+$_SESSION['id']=$ligne['id'];
+$_SESSION['nomprenom']=$ligne['nomprenom'];
+
+
+
+
+}
+ }
  ?>
 
