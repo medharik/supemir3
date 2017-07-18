@@ -1,0 +1,27 @@
+.btn-danger{
+background: purple;
+}
+.netoyer{
+	clear: both;
+}
+.centerZone{
+
+float: none;
+margin: auto;
+display: block;
+}
+
+.centerText{
+	text-align: center;
+}
+.bordure{
+border: 1px solid black;
+}
+.col-md-4 p{
+text-align: justify;
+}
+ .col-md-4 h2{
+ 	text-align: center;
+ 	color:red;
+ 	text-transform: capitalize;
+ }
